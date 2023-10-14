@@ -1,2 +1,8 @@
 "# 401121025" 
-"# 401121025" 
+#include <iostream>
+using namespace std;
+
+int main() {
+cout << "Hello World!";
+return 0;
+}
