@@ -1,0 +1,12 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Hello please enter number" << endl;
+    int number;
+    cin>>number;
+    cout<<"your number is="<<number;
+    return 0;
+}
