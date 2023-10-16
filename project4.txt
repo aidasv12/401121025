@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+struct car{
+string model;
+int year;};
+
+int main()
+{car car1;
+car1.model="bmw";
+car1.year=2018;
+car car2;
+car2.model="benz";
+car2.year=2020;
+cout<<car1.model<<"  "<<car1.year<<endl;
+cout<<car2.model<<"  "<<car2.year<<endl;
+    cout << "Hello world!" << endl;
+    return 0;
+}
