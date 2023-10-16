@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+void myfunction(string name,int score){
+cout<<"your name is"<<"  "<<name<<"  "<<"your score is"<<"  "<<score<<endl;}
+
+int main()
+
+{
+    myfunction("aida",20);
+    myfunction("maryam",15);
+    myfunction("mobina",19);
+    return 0;
+}
