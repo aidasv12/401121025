@@ -1,0 +1,59 @@
+#include<iostream>
+class Student{
+public:
+Student( std::string  Name,int Average):name(Name){
+setAverage(Average);
+
+}
+void setName(std::string Name){
+name=Name;}
+
+ std::string getName () const{
+return name;}
+
+void setAverage(int Average){
+if(Average>0 && Average<=100){
+average=Average;
+
+}
+}
+
+
+int getAverage () const{
+
+return average;
+}
+std::string getletter(){
+std::string lettergrade;
+if(average>=90){
+lettergrade="A";
+
+}
+else if(average>=80){
+lettergrade="B";
+
+}
+else if(average>=70){
+
+lettergrade="C";
+}
+else if(average>=60){
+lettergrade="D";
+
+}
+else{
+lettergrade="F";
+
+}
+
+return lettergrade;
+}
+private:
+std::string name;
+int average=0;
+
+
+
+
+
+};

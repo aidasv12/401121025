@@ -1,0 +1,19 @@
+
+#include <iostream>
+#include "Student.h"
+
+using namespace std;
+
+int main()
+
+{
+Student s1("mahsa",80);
+Student s2("maryam",65);
+cout<<"student name is:"<<s1.getName()<<"  letter grade equivalent of "<<s1.getAverage()<<" is:"<<s1.getletter()<<"\n";
+cout<<"student name is:"<<s2.getName()<<"  letter grade equivalent of "<<s2.getAverage()<<" is:"<<s2.getletter()<<"\n";
+
+
+
+
+        return 0;
+}
