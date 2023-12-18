@@ -1,0 +1,133 @@
+#include <iostream>
+#include<string>
+using namespace std;
+class Employee{
+public:
+Employee(std::string&,std::string&,std::string&,double=0,double=0);
+void setFirstname(std::string&);
+std::string getFirstname();
+void setLastname(std::string&);
+std::string getLastname();
+void setSocialsecurityNumber(std::string&);
+std::string getSocialsecurityNumber();
+void setGrosssales(double);
+double getGrosssales();
+void setCommissionrate(double);
+double getCommissionrate();
+double earnings();
+std::string toString();
+private:
+std::string Firstname;
+std::string Lastname;
+std::string SocialsecurityNumber;
+double Grosssales;
+double Commissionrate;
+
+
+
+
+
+};
+#include<iomanip>
+#include<stdexcept>
+#include<sstream>
+#include<string>
+using namespace std;
+Employee::Employee(string& first,string& last,string& ssn,double sales,double rate){
+
+ Firstname=first;
+ Lastname=last;
+ SocialsecurityNumber=ssn;
+ setGrosssales(sales);
+ setCommissionrate(rate);
+
+
+}
+void Employee::setFirstname(string& first){
+Firstname=first;
+
+}
+string Employee::getFirstname(){return Firstname;}
+void Employee::setLastname(string& last){
+Lastname=last;
+
+}
+string Employee::getLastname(){return Lastname;}
+
+void Employee::setSocialsecurityNumber(string& ssn){
+SocialsecurityNumber=ssn;
+
+
+}
+string Employee::getSocialsecurityNumber(){
+return SocialsecurityNumber;
+
+
+}
+void Employee::setGrosssales(double sales){
+if(sales<0){
+throw invalid_argument("Gross sales must be>=0");
+
+
+
+}
+Grosssales=sales;
+}
+double Employee::getGrosssales(){return Grosssales;  }
+void Employee::setCommissionrate(double rate){
+if(rate<=0 || rate>=1){
+throw invalid_argument("commission rate must be>0 and <1");
+
+
+}
+Commissionrate=rate;
+
+
+
+}
+double Employee::getCommissionrate(){
+return Commissionrate;
+
+}
+double Employee::earnings(){
+return Commissionrate*Grosssales;
+
+}
+string Employee::toString(){
+ostringstream output;
+output<<fixed<<setprecision(2);
+output<<"commission employee:"<<Firstname<<" "<<Lastname<<"\nsocial security number:"<<SocialsecurityNumber<<"\ngross sales:"<<Grosssales<<"\ncommission rate:"<<Commissionrate;
+return output.str();
+
+
+
+}
+
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+
+
+
+
+
+int main()
+{
+Employee employee1  {"sue","jones","22222-222",10000,.6};
+cout<<fixed<<setprecision(2);
+cout<<"Employee information obtained by get functions:\n"<<"\nfirst name is"<<employee.getFirstname()
+<<"\nLast name is"<<employee.getLastname()
+<<"\nSocial security number is"
+<<employee.getSocialsecurityNumber()
+<<"\nGross sales is"<<employee.getGrosssales()
+<<"\nCommission rate is"<<employee.getCommissionrate()<<endl;
+employee.setGrosssales(8000);
+employee.setCommissionrate(.1);
+cout<<"updated employee information from function tostring:\n\n"<<employee.toString();
+cout<<"\n\nEmployees earnings:$"<<employee.earnings()<<endl;
+
+
+    return 0;
+}
